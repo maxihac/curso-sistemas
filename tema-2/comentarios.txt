@@ -1,0 +1,15 @@
+Hola Maxi! 
+Tu trabajo está muy bien!
+
+Te hago algunas observaciones:
+
+<td> es prácticamente igual que <th> solo que <th> formatea diferente el contenido
+del elemento si le escribís texto en su interior.
+Generalmente se usa <th> cuando querés armar el encabezado de una tabla de datos/información.
+Acá para nuestro caso serían indistintos usar uno u otro.
+
+¡Muy buen uso de los atributos!
+Cuidado con el indentado del código, para que cuando sea más grande ó tenga más elementos
+pueda ser legible a simple vista.
+
+¡Saludos!
