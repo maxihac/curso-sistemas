@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formulario GET</title>
+</head>
+<body>
+	<form action="form-get.php" method="GET">
+		<table>
+			<tr>
+				<td>
+				   <label>Nombre:</label>
+				   <input type="text" name="nombre"></input>
+				</td>
+				<td>
+				   <label>Apellidos:</label>	
+				   <input type="text" name="apellidos"></input>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+				   <label>Correo Electrónico</label>	
+				   <input type="email" name="email"></input>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+				   <label>Población</label>
+				   <input type="text" name="poblacion"></input>
+				</td>
+				<td>
+				   <label>Provincia</label>
+				   <input type="text" name="provincia"></input>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<label>Edad</label><br>
+					<input type="radio" id="age1" name="age"></input>
+					<label for="age">0-20</label><br>
+					<input type="radio" id="age2" name="age"></input>
+					<label for="age">20-40</label><br>
+					<input type="radio" id="age3" name="age"></input>
+					<label for="age">40-60</label><br>
+					<input type="radio"id="age4" name="age"></input>
+					<label for="age">60-100</label><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Como nos conociste</label><br>
+					<input type="checkbox" id="recomendacion1" name="recomendacion" value="friend"></input>
+					<label>A traves de un amigo</label><br>
+					<input type="checkbox" id="recomendacion2" name="recomandacion" value="search"></input>
+					<label>A traves de un buscador</label><br>
+					<input type="checkbox" id="recomendacion3" name="recomandacion" value="net"></input>
+					<label>Navegando por la red</label><br>
+					<input type="checkbox" id="recomendacion4" name="recomandacion" value="others"></input>
+					<label>Otros</label><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Opinion sobre nuestra pagina Web</label>
+					<textarea name="option">Escribe...</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>¿Tienes alguna sugerencia?</label>
+					<textarea name="sugerencia">Escribe tu sugerencia</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Cuanto navegas por Internet? (señala la opcion más aproximada )</label><br>
+					<select name="hsxdia">
+						<option value="2">2 hs al dia</option>
+						<option value="4">4 hs al dia</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<input type="submit" name="submit" value="Enviar Formulario">
+				<input type="reset" value="Borrar Formulario">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
