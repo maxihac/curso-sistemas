@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<form action="file:///C|/Users/mhacard/Desktop/URL" method="post">
+	<form action="form_post.php" method="post">
     	<table border="0" align="center" width="35%">
              <tr >
               <td colspan="2">
@@ -43,7 +43,7 @@
             <tr>
               <td>
               	<label>Gender</label><br>
-                <input type="radio" name="gender" id="gender1" >
+                <input type="radio" name="gender" id="gender1">
                 <label>Male</label>
                 <input type="radio" name="gender" id="gender2">
               	<label>Female</label>
@@ -64,8 +64,8 @@
               <td>
               	<label>Source of income </label>
                 <select name="source">
-                	<option value="employed">Employed</option>
-					<option value="notemployed">Not employed</option>
+                	 <option value="employed">Employed</option>
+					         <option value="notemployed">Not employed</option>
                 </select>
               </td>
               <td>
@@ -81,13 +81,13 @@
               </td>
               <td>
               	<label>AGE</label><br>
-                <input type="text" id="age">
+                <input type="text" id="age" name="age">
               </td>
             </tr>
             <tr>
               <td colspan="2">
               	<label>Bio</label><br>
-               	<textarea  id="bio" style="width:98%; height:50px"></textarea>
+               	<textarea  id="bio" name="biotextarea"  style="width:98%; height:50px"></textarea>
               </td>
               
             </tr>
