@@ -1,0 +1,104 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="W3.css">
+	<title>Form post</title>
+</head>
+
+<body>
+	<form action="form_post.php" method="post" enctype="multipart/form-data">
+		<!--cuando hay archivos hay q ponerlo enctype-->
+		<table class="w3-display-middle w3-border w3-round w3-container w3-half w3-responsive">
+			<tr>
+				<td colspan="2">
+					<input type="submit" name="create_count" value="Create Account" id="idbuttoncreate" class="w3-btn w3-gray w3-block w3-xlarge w3-round">
+				</td>
+			</tr>
+			<tr class="w3-text-blue">
+				<td style="width:50%">
+					<label>First Name *</label><br>
+					<input type="text" name="first_name" placeholder="enter your first name" class="w3-input w3-border w3-round">
+				</td>
+				<td style="width:50%">
+					<label>Last Name</label><br>
+					<input type="text" name="last_name" placeholder="enter your last name" class="w3-input w3-border w3-round">
+				</td>
+			</tr>
+			<tr class="w3-text-blue">
+				<td colspan="2">
+					<label>Email</label><br>
+					<input type="email" name="email" placeholder="enter your email" class="w3-input w3-border w3-round">
+				</td>
+
+			</tr>
+			<tr class="w3-text-blue">
+				<td>
+					<label>Password*</label><br>
+					<input type="password" name="password" placeholder="enter your password" class="w3-input w3-border w3-round">
+				</td>
+				<td>
+					<label>Confirm Password*</label><br>
+					<input type="password" name="confirm_password" placeholder="enter your password" class="w3-input w3-border w3-round">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label class="w3-text-blue">Gender</label><br>
+					<input type="radio" name="gender" id="gender1" class="w3-radio">
+					<label>Male</label>
+					<input type="radio" name="gender" id="gender2" class="w3-radio">
+					<label>Female</label>
+				</td>
+				<td>
+					<label class="w3-text-blue">Hobbies</label><br>
+					<input type="checkbox" name="hobbies" id="music" class="w3-check">
+					<label>Music</label>
+					<input type="checkbox" name="hobbies" id="sport" class="w3-check">
+					<label>Sport</label>
+					<input type="checkbox" name="hobbies" id="travel" class="w3-check">
+					<label>Travel</label>
+					<input type="checkbox" name="hobbies" id="movies" class="w3-check">
+					<label>Movies</label>
+				</td>
+			</tr>
+			<tr class="w3-text-blue">
+				<td>
+					<label>Source of income </label><br>
+					<select name="income" class="w3-select w3-border">
+						<option value="employed">Employed</option>
+						<option value="notemployed">Not employed</option>
+					</select>
+				</td>
+				<td>
+					<label>Income </label><br>
+					<input type="range" id="income" name="income" value="0" class="w3-range">
+					<label style="color:#ffffff ; font-size:large; background-color: #17CF99"> 20 K </label><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label class="w3-text-blue">Upload profile picture</label><br>
+					<input type="file" name="Choose_file" value="Choose_File" id="Choose_file" class="w3-input w3-border-0">
+				</td>
+				<td>
+					<label class="w3-text-blue">AGE</label><br>
+					<input type="text" id="age" name="age" class="w3-input w3-border w3-round w3-medium">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<label class="w3-text-blue">Bio</label><br>
+					<textarea id="bio" name="biotextarea" class="w3-input w3-border w3-round"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" bgcolor="eae8e7" class="w3-container">
+					<input type="submit" value="Create" id="idbuttoncreate2" class="w3-btn w3-xlarge w3-round w3-blue w3-right ">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

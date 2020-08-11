@@ -1,0 +1,74 @@
+* {
+  color: brown;
+  /*se aplica a toda la pagina web*/
+}
+
+.font-buttons {
+  /*todas las clases que ponga con este nombre en html se va a plicar*/
+  color: white;
+  font-size: 50%;
+  font-weight: bold;
+  /*ver selectores css en w3schools*/
+}
+
+.size-buttons {
+  width: 32px;
+  height: 32px;
+}
+
+/*#n7 {
+  color: brown;
+solo modifica a los elementos con el id n7*/
+}
+
+/*#n7:hover {
+  pseudoclases cuando paso el mouse se pone verde
+  background-color: green;
+}*/
+
+.table-2 .blue-buttons {
+  /*clase dentro de otra clase*/
+  color: black;
+}
+
+.blue-buttons {
+  background-color: blue;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0px 3px rgb(0, 0, 174);
+}
+
+.blue-buttons:hover {
+  /*es una pseudoclase cuando pase con el mouse x los botones azules*/
+  background-color: red;
+  color: yellow;
+}
+
+
+ .red-buttons {
+  background-color: red;
+  width: 32px;
+  height: 32px;
+  width: 100%;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0px 3px rgb(210, 0, 0);
+}
+
+.green-buttons {
+  background-color: green;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0px 3px rgb(87, 176, 38);
+}
+
+.yellow-buttons {
+  background-color: yellow;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0px 3px rgb(212, 212, 0);
+}
