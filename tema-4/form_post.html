@@ -6,6 +6,31 @@
 	<title>Form post</title>
 </head>
 
+<style>
+
+/*Hola Maxi, te quería comentar que tu trabajo está excelente. Capturaste bien la idea
+de lo que había que hacer, se nota muy bien el uso de los atributos consistentes con los de W3CSS.
+Te hago unas sugerencias nomás, en este caso te agregué un elemento style acá, solo para ejemplificar.
+
+Hay algunos elementos que los estilizaste en la forma "inline" como se le suele decir.
+Ejemplo: <label style="color:#ffffff ; font-size:large; background-color: #17CF99"> 20 K </label><br>
+Ahí toda esas propiedades se pueden encapsular en una sentencia de CSS.
+
+.label_slider
+{
+	color:#ffffff;
+	font-size:large;
+	background-color:#17CF99
+}
+
+y reemplazar todo el style por class="label_slider", eso es mucho más conveniente siempre y es la opción 
+que te recomiendo en la mayoría de los casos. Lo mismo para todos los casos donde pusiste style="width:50%", 
+todo eso va a una clase CSS con esa sola propiedad. De esa manera evitás que si hay que hacer cambios futuros
+no salís a toquetear todo el código HTML y los valores de todos los atributos.*/
+
+
+</style>
+
 <body>
 	<form action="form_post.php" method="post" enctype="multipart/form-data">
 		<!--cuando hay archivos hay q ponerlo enctype-->
