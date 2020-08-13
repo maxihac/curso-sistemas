@@ -1,0 +1,9 @@
+Hola Maxi:
+
+Te dejé una devolución incrustada en el código de la otra actividad (la de CSS) para que veas el efecto de la modificación vía github
+como me habías pedido la otra vez.
+
+---------
+
+Con respecto a las actividades de aquí.
+Tu form_post.html, está excelente. El resultado final te quedó muy prolijo.
