@@ -1,0 +1,19 @@
+
+<!doctype html>
+<html>
+
+
+<head>
+	<meta charset="utf-8">
+	<script src="appppp.js" language="javascript" type="text/javascript"></script>
+	<title>Calculadora</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<script type="text/javascript">
+	let name="Juan";
+	console.log(name);
+</script>
+<body>
+</body>
+
+</html>

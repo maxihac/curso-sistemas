@@ -1,0 +1,34 @@
+let aumento_prod_lacteo = 1.15;
+let aumento_prod_limpieza = 1.22;
+let aumento_prod_bebida = 1.34;
+let aumento_prod_pan = 1.27;
+let aumento_prod_fiambre =1.27 ;
+
+let producto=
+{
+marca:'Sancor',
+descripcion: 'leche 1 lt',
+precio:70.30
+}
+producto.precio=producto.precio*aumento_prod_lacteo;
+let stock= [producto1,producto2,producto3];
+let stock=
+  [
+    {
+      marca:'Sancor',
+      descripcion: 'leche 1 lt',
+      precio:70.30
+    },
+    {
+      marca:'Sancor',
+      descripcion: 'yogurt 1 lt',
+      precio:42
+    },
+    {
+      marca:'Sancor',
+      descripcion: 'queso',
+      precio:333
+    }
+
+
+]
