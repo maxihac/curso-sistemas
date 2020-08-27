@@ -14,38 +14,40 @@ function dolarToHTML(table) {
   html += "<tr>";
   for (var i = 0; i < table.length + 1; i++) {
     html += "<td>";
-    html += '<table class="w3-border w3-round w3-centered">';
-    html += "<tr>";
-    html += '<td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ' + table[0][i];
-    html += "</td>";
-    html += "</tr>";
-    html += '<tr class="w3-light-grey">';
-    html += '<td class=" w3-half w3-tiny">' + table[1][0];
-    html += '</td>';
-    html += '<td class=" w3-half w3-tiny">' + table[2][0];
-    html += '</td>';
-    html += '</tr>';
-    html += '<tr class="w3-light-grey">';
-    html += '<td class="w3-half w3-large">$' + table[1][i + 1].toFixed(2);
-    html += ' </td>';
-    html += '<td class="w3-half w3-large">$' + table[2][i + 1].toFixed(2);
-    html += ' </td>';
-    html += '</tr>';
-    html += '<tr>';
-    html += ' <td colspan="2" class="w3-round">Variacion:' + table[3][i + 1].toFixed(2) + "%";
-    html += '</td>';
-    html += '</tr>';
-    html += '<tr>';
-    html += '<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ' + table[4][i + 1];
-    html += ' </td>';
-    html += '</tr>';
-    html += '</table>';
+    html += '   <table class="w3-border w3-round w3-centered">';
+    html += "     <tr>";
+    html += '       <td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ' + table[0][i];
+    html += "       </td>";
+    html += "     </tr>";
+    html += '     <tr class="w3-light-grey">';
+    html += '       <td class=" w3-half w3-tiny">' + table[1][0];
+    html += '       </td>';
+    html +=         '<td class=" w3-half w3-tiny">' + table[2][0];
+    html +=         '</td>';
+    html +=       '</tr>';
+    html +=       '<tr class="w3-light-grey">';
+    html +=         '<td class="w3-half w3-large">$' + table[1][i + 1].toFixed(2);
+    html +=         '</td>';
+    html +=         '<td class="w3-half w3-large">$' + table[2][i + 1].toFixed(2);
+    html +=         '</td>';
+    html +=       '</tr>';
+    html +=       '<tr>';
+    html +=        '<td colspan="2" class="w3-round">Variacion:' + table[3][i + 1].toFixed(2) + "%";
+    html +=        '</td>';
+    html +=       '</tr>';
+    html +=       '<tr>';
+    html +=        '<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ' + table[4][i + 1];
+    html +=        '</td>';
+    html +=       '</tr>';
+    html +=    '</table>';
     html += '</td>';
     if (i == 2) {
-      html += '</tr>';
-    } //del if
-  } //del for
-  html += '</table>';
+      html +='</tr>'; //lo hago para bajar a la siguiente  fila
+      html +='<tr>'
+      } //del if
+    } //del for
+    html +='</tr>'
+    html += '</table>';
   return html;
 }
 document.getElementById('ui').innerHTML = dolarToHTML(table_datos);
