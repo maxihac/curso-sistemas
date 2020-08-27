@@ -26,9 +26,9 @@ function dolarToHTML(table) {
     html +=         '</td>';
     html +=       '</tr>';
     html +=       '<tr class="w3-light-grey">';
-    html +=         '<td class="w3-half w3-large">$' + table[1][i + 1].toFixed(2);
+    html +=         '<td class="w3-half w3-xlarge">$' + table[1][i + 1].toFixed(2);
     html +=         '</td>';
-    html +=         '<td class="w3-half w3-large">$' + table[2][i + 1].toFixed(2);
+    html +=         '<td class="w3-half w3-xlarge">$' + table[2][i + 1].toFixed(2);
     html +=         '</td>';
     html +=       '</tr>';
     html +=       '<tr>';
@@ -41,7 +41,7 @@ function dolarToHTML(table) {
     html +=       '</tr>';
     html +=    '</table>';
     html += '</td>';
-    if (i == 2) {
+    if (i == 2) { //3 paneles x fila 0,1,2
       html +='</tr>'; //lo hago para bajar a la siguiente  fila
       html +='<tr>'
       } //del if
