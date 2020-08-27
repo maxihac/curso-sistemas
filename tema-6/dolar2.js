@@ -1,6 +1,6 @@
 //Estrategia 2 (Matriz)
 
-let table1 = [
+let table_datos = [
   ['OFICIAL', 'BLUE', 'CONTADO', 'PROMEDIO', 'BOLSA', 'TURISTA'],
   ['Compra', 10, 11, 12, 13, 14, 12],
   ['Venta', 26.3, 25.8, 23.7, 20.5, 16.8, 22.4],
@@ -28,7 +28,7 @@ function dolarToHTML(table) {
     html += '<tr class="w3-light-grey">';
     html += '<td class="w3-half w3-large">$' + table[1][i + 1].toFixed(2);
     html += ' </td>';
-    html += '<td class="w3-half w3-large">' + table[2][i + 1].toFixed(2);
+    html += '<td class="w3-half w3-large">$' + table[2][i + 1].toFixed(2);
     html += ' </td>';
     html += '</tr>';
     html += '<tr>';
@@ -36,7 +36,7 @@ function dolarToHTML(table) {
     html += '</td>';
     html += '</tr>';
     html += '<tr>';
-    html += '<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el:' + table[4][i + 1];
+    html += '<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ' + table[4][i + 1];
     html += ' </td>';
     html += '</tr>';
     html += '</table>';
@@ -60,7 +60,7 @@ function dolarToHTML(table) {
     html += '<tr class="w3-light-grey">';
     html += '<td class="w3-half w3-large">$' + table[1][i + 1].toFixed(2);
     html += ' </td>';
-    html += '<td class="w3-half w3-large">' + table[2][i + 1].toFixed(2);
+    html += '<td class="w3-half w3-large">$' + table[2][i + 1].toFixed(2);
     html += ' </td>';
     html += '</tr>';
     html += '<tr>';
@@ -68,7 +68,7 @@ function dolarToHTML(table) {
     html += '</td>';
     html += '</tr>';
     html += '<tr>';
-    html += '<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el:' + table[4][i + 1];
+    html += '<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ' + table[4][i + 1];
     html += ' </td>';
     html += '</tr>';
     html += '</table>';
@@ -78,4 +78,4 @@ function dolarToHTML(table) {
 
   return html;
 }
-document.getElementById('ui').innerHTML = dolarToHTML(table1);
+document.getElementById('ui').innerHTML = dolarToHTML(table_datos);
