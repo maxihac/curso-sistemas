@@ -8,6 +8,15 @@ let table_datos = [
   ['fecha_act', "03/03/20", "06/03/20", "09/3/20", "25/03/20", "05/04/20", "25/6/20"],
 ];
 
+/*Devolución:
+
+Maxi, muy bueno tu trabajo. Te quedó acorde a lo pedido!!
+Recomendación. Para estos casos, te conviene utilizar la forma de escritura de strings con comilla invertida
+Hoy en clase 28/08 lo comentaré. Te va a simplificar muchísimo para no andar concatenando y volviéndote loco con los
+espacios, comillas simples y dobles.
+
+*/
+
 function dolarToHTML(table) {
   let html = "";
   html += '<table class=" w3-border w3-round w3-container w3-display-topmiddle">';
