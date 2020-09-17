@@ -59,168 +59,163 @@ function HTMLUsdDashboard(table) {
   html += `<table class=" w3-border w3-round w3-container w3-display-topmiddle">
    							<tr>
     							<td>
-       							<table class="w3-border w3-round w3-centered">
+       						<table class="w3-border w3-round w3-centered">
        							<tr>
        									<td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][0]; // tabla dolar Oficial
-  html += `</td>
+  html +=                `</td>
       							</tr>
        							<tr class="w3-light-grey">
            						<td class=" w3-half w3-tiny">` + table[1][0];
-  html += `</td>
+  html +=             `</td>
            						<td class=" w3-half w3-tiny">` + table[2][0];
-  html += `</td>
-        							</tr>
-        							<tr class="w3-light-grey">
+  html +=             `</td>
+        						</tr>
+        						<tr class="w3-light-grey">
           						<td class="w3-half w3-xlarge">$ ` + table[1][1];
-  html += `</td>
+  html +=              `</td>
            						<td class="w3-half w3-xlarge">$ ` + table[2][1];
-  html += `</td>
-       </tr>
-       <tr>
-      <td colspan="2" class="w3-round">Variacion:` + table[3][1] + "%";
-  html += `</td>
-          </tr>
-          <tr>
-           <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el:      ` + table[4][1];
-  html += `</td>
-         </tr>
-      </table>
-			<td>
-
-			<table class="w3-border w3-round w3-centered">
-			<tr>
-			<td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][1]; //dolar BLUE
-  html += `</td>
-		 </tr>
-			<tr class="w3-light-grey">
-					<td class=" w3-half w3-tiny">` + table[1][0];
-  html += `</td>
-					<td class=" w3-half w3-tiny">` + table[2][0];
-  html += `</td>
-			 </tr>
-			 <tr class="w3-light-grey">
-				 <td class="w3-half w3-xlarge">$ ` + table[1][2];
-  html += `</td>
-					<td class="w3-half w3-xlarge">$ ` + table[2][2];
-  html += `</td>
-			</tr>
-			<tr>
-		 <td colspan="2" class="w3-round">Variacion:` + table[3][2] + "%";
-  html += `</td>
-				 </tr>
-				 <tr>
-					<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el:      ` + table[4][2];
-  html += `</td>
-				</tr>
-		 </table>
-    </td>
-		<td>
-
-		<table class="w3-border w3-round w3-centered">
-		<tr>
-		<td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][2]; //dolar con liqui
-  html += `</td>
-	 </tr>
-		<tr class="w3-light-grey">
-				<td class=" w3-tiny">REFERENCIA`;
-  html += `</td>
-		 </tr>
-		 <tr class="w3-light-grey">
-			 <td class="w3-xlarge w3-centered">$ ` + table[1][3];
-  html += `</td>
-		</tr>
-		<tr>
-	 <td colspan="2" class="w3-round">Variacion:` + table[3][3] + "%";
-  html += `</td>
-			 </tr>
-			 <tr>
-				<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;"> Actualizado el:` + table[4][3];
-  html += `</td>
-			</tr>
-	 </table>
-
-  </tr>
-	<tr>
-	<td>
-	<table class="w3-border w3-round w3-centered">
-	<tr>
-	<td colspan="2" class=" w3-round w3-dark-grey w3-medium">` + table[0][3]; //dolar PROMEDIO lo cambie por bitcoin
-
-  html += `</td>
-	</tr>
-	 <tr class="w3-light-grey">
-			 <td class=" w3-half w3-tiny">` + table[1][0];
-  html += `</td>
-			 <td class=" w3-half w3-tiny">` + table[2][0];
-  html += `</td>
-
-	 </tr>
-	 <tr class="w3-light-grey">
-		 <td class="w3-half w3-large">$ ` + table[1][4];
-  html += `</td>
-			<td class="w3-half w3-large">$ ` + table[2][4];
-  html += `</td>
-	</tr>
-	<tr>
- <td colspan="2" class="w3-round">Variacion:` + table[3][4] + "%";
-  html += `</td>
-		 </tr>
-		 <tr>
-			<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ` + table[4][4];
-  html += `</td>
-		</tr>
- </table>
-	</td>
-<td>
-	<table class="w3-border w3-round w3-centered">
-	<tr>
-	<td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][4]; //dolar Bolsa
-  html += `</td>
- </tr>
-	<tr class="w3-light-grey">
-			<td class=" w3-tiny">REFERENCIA`;
-  html += `</td>
-	 </tr>
-	 <tr class="w3-light-grey">
-		 <td class="w3-xlarge w3-centered">$ ` + table[1][5];
-  html += `</td>
-	</tr>
-	<tr>
- <td colspan="2" class="w3-round">Variacion:` + table[3][5] + "%";
-  html += `</td>
-		 </tr>
-		 <tr>
-			<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ` + table[4][5];
-  html += `</td>
-		</tr>
- </table>
-</td>
-<td>
-	<table class="w3-border w3-round w3-centered">
-	<tr>
-	<td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][5]; //dolar turista
-  html += `</td>
- </tr>
-	<tr class="w3-light-grey">
-			<td class=" w3-tiny">Venta`;
-  html += `</td>
-	 </tr>
-	 <tr class="w3-light-grey">
-		 <td class="w3-xlarge w3-centered">$ ` + table[2][6];
-  html += `</td>
-	</tr>
-	<tr>
- <td colspan="2" class="w3-round">VARIACIÓN:` + table[3][6] + "%";
-  html += `</td>
-		 </tr>
-		 <tr>
-			<td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ` + table[4][6];
-  html += `</td>
-		</tr>
- </table>
-</td>
-	</tr>
-     </table>`;
+  html +=             `</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="w3-round">Variacion:` + table[3][1] + "%";
+  html +=             `</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el:      ` + table[4][1];
+  html +=             `</td>
+                     </tr>
+                  </table>
+			            <td>
+			               <table class="w3-border w3-round w3-centered">
+			                  <tr>
+			                     <td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][1]; //dolar BLUE
+  html +=                  `</td>
+		                    </tr>
+			                  <tr class="w3-light-grey">
+					                 <td class=" w3-half w3-tiny">` + table[1][0];
+  html +=                  `</td>
+					                 <td class=" w3-half w3-tiny">` + table[2][0];
+  html +=                  `</td>
+			                   </tr>
+			                   <tr class="w3-light-grey">
+				                     <td class="w3-half w3-xlarge">$ ` + table[1][2];
+  html +=                    `</td>
+					                   <td class="w3-half w3-xlarge">$ ` + table[2][2];
+  html +=                    `</td>
+			                   </tr>
+			                   <tr>
+		                        <td colspan="2" class="w3-round">Variacion:` + table[3][2] + "%";
+  html +=                   `</td>
+				                 </tr>
+				                 <tr>
+					                  <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el:      ` + table[4][2];
+  html +=                   `</td>
+				                 </tr>
+		                </table>
+                    </td>
+		                <td>
+		                  <table class="w3-border w3-round w3-centered">
+		                    <tr>
+		                      <td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][2]; //dolar con liqui
+  html +=                 `</td>
+	                      </tr>
+		                    <tr class="w3-light-grey">
+				                    <td class=" w3-tiny">REFERENCIA`;
+  html +=                   `</td>
+		                    </tr>
+		                    <tr class="w3-light-grey">
+			                     <td class="w3-xlarge w3-centered">$ ` + table[1][3];
+  html +=                  `</td>
+		                    </tr>
+		                    <tr>
+	                         <td colspan="2" class="w3-round">Variacion:` + table[3][3] + "%";
+  html +=                  `</td>
+			                  </tr>
+			                  <tr>
+				                   <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;"> Actualizado el:` + table[4][3];
+  html +=                  `</td>
+			                  </tr>
+	                    </table>
+                      </tr>
+	                    <tr>
+	                       <td>
+	                        <table class="w3-border w3-round w3-centered">
+	                         <tr>
+	                           <td colspan="2" class=" w3-round w3-dark-grey w3-medium">` + table[0][3]; //dolar PROMEDIO lo cambie por bitcoin
+  html +=                   `</td>
+	                         </tr>
+	                         <tr class="w3-light-grey">
+			                        <td class=" w3-half w3-tiny">` + table[1][0];
+  html +=                     `</td>
+			                        <td class=" w3-half w3-tiny">` + table[2][0];
+  html +=                     `</td>
+	                         </tr>
+	                         <tr class="w3-light-grey">
+		                         <td class="w3-half w3-large">$ ` + table[1][4];
+  html +=                    `</td>
+			                       <td class="w3-half w3-large">$ ` + table[2][4];
+  html +=                    `</td>
+	                         </tr>
+	                         <tr>
+                            <td colspan="2" class="w3-round">Variacion:` + table[3][4] + "%";
+  html +=                   `</td>
+		                       </tr>
+		                       <tr>
+			                        <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ` + table[4][4];
+  html +=                     `</td>
+		                       </tr>
+                          </table>
+	                        </td>
+                          <td>
+	                         <table class="w3-border w3-round w3-centered">
+	                           <tr>
+	                            <td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][4]; //dolar Bolsa
+  html +=                     `</td>
+                             </tr>
+	                           <tr class="w3-light-grey">
+			                          <td class=" w3-tiny">REFERENCIA`;
+  html +=                       `</td>
+	                           </tr>
+	                           <tr class="w3-light-grey">
+		                           <td class="w3-xlarge w3-centered">$ ` + table[1][5];
+  html +=                      `</td>
+	                           </tr>
+	                           <tr>
+                              <td colspan="2" class="w3-round">Variacion:` + table[3][5] + "%";
+  html +=                     `</td>
+		                         </tr>
+		                         <tr>
+			                          <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ` + table[4][5];
+  html +=                       `</td>
+		                         </tr>
+                          </table>
+                          </td>
+                          <td>
+	                        <table class="w3-border w3-round w3-centered">
+	                          <tr>
+	                              <td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ` + table[0][5]; //dolar turista
+  html +=                       `</td>
+                            </tr>
+	                          <tr class="w3-light-grey">
+			                           <td class=" w3-tiny">Venta`;
+  html +=                       `</td>
+	                          </tr>
+	                          <tr class="w3-light-grey">
+		                            <td class="w3-xlarge w3-centered">$ ` + table[2][6];
+  html +=                       `</td>
+	                           </tr>
+	                           <tr>
+                                <td colspan="2" class="w3-round">VARIACIÓN:` + table[3][6] + "%";
+  html +=                       `</td>
+		                         </tr>
+		                         <tr>
+			                          <td colspan="2" class="w3-dark-grey w3-round w3-tiny" style="height:8px;">Actualizado el: ` + table[4][6];
+  html +=                       `</td>
+		                         </tr>
+                          </table>
+                          </td>
+	                        </tr>
+          </table>`;
   return html;
 }
 
