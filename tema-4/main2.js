@@ -1,3 +1,36 @@
+/*Maxi, la calculadora está muy bien a nivel de código de eventos y el HTML
+El único tema es que no tenés que reutilizar las funciones onClick dentro de otras.
+Se supone que cada función es la respuesta a la interacción del usuario, y es única.
+De lo contrario el cambio de una de ellas, propaga el cambio a todas.
+
+EJ:
+
+function onButtondivClick()
+ {
+	op1= document.getElementById('display').value;
+	op = "/";
+      onButtondeleteClick(); <--- acá. 
+}
+
+La lógica interna de funcionamiento tiene detallecitos. El botón igual está
+sólo habilitando expresiones matemáticas de dos números con un operador de por medio:
+Estilo: a+b  a-b  a*b    a/b
+Con lo cual si cargo: 7+2*2 me devuelve 4
+
+La expresión matemática se calcula tomando toda la cadena de string que tenés en el display.
+Vos siempre vas concatenando coherentemente los símbolos de operación y números uno tras otro.
+
+Ej: 9*9/4+2
+
+Y el botón igual tiene que procesar todo lo que esté en el display y mostrar ésto
+La forma fácil es usando eval( document.getElementById('display').value )
+
+Ojo, no tendrías porqué saber que la función era eval. Es algo que se busca en internet.
+La tendencia a resolverlo uno es procesar cada número y simbolo en un for.
+
+*/
+
+
 var op1;
 var op2;
 var op;
