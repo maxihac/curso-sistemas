@@ -1,4 +1,9 @@
-function now(date) {
+function now(date)
+{
+  //Acá, este argumento "date" no está siendo usado nunca.
+  //Si el objetivo de la función es que devuelva la fecha actual, 
+  //No deber recibir parámetros externos. La lógica interna ya alcanza para retornar esta info.
+
   fecha_act = new Date();
   dia = fecha_act.getDate();
   mes = parseInt(fecha_act.getMonth()) + 1;
@@ -12,6 +17,15 @@ function now(date) {
 }
 
 function ConvertServerResponse(responseObject) {
+
+  /*La implementación de la función está bien.
+  Se te ha puesto laboriosa y es algo compleja visualmente, pero
+  esto no está mal, es consecuencia de haber elegido una matriz como estructura de datos
+  para resolver el problema. En este caso te demuestra que es mejor utilizar otra estrategia
+  que sea más idiomática. En la otra actividad, donde transformábamos la tabla de temperaturas,
+  ahí para ese problema particular era mejor la matriz, pero ojo, no hay que acostumbrarse ni casarse
+  con aplicar siempre el mismo método o estructura de datos, a veces conviene una, y a veces otra.*/
+
   let table_datos = [
     ['OFICIAL', 'BLUE', 'CONTADO', 'BITCOIN', 'BOLSA', 'TURISTA'],
     ['Compra', '--', '--', '--', '--','--', '--'],
@@ -25,6 +39,11 @@ function ConvertServerResponse(responseObject) {
 
   if (responseObject != null) {
     let date = "";
+
+    /*En esta parte, sobre la consulta, y teniendo en cuenta el código     Podés declarar una variable:
+    let date = now("");
+    y luego asignar esto a las componentes que necesitás: table_datos[4][2] = date;*/
+
     table_datos[1][1] = responseObject[0].casa.compra.substr(0, 5);
     table_datos[2][1] = responseObject[0].casa.venta.substr(0, 5);
     table_datos[3][1] = responseObject[0].casa.variacion.substr(0, 5);
@@ -54,7 +73,29 @@ function ConvertServerResponse(responseObject) {
   return table_datos;
 }
 
-function HTMLUsdDashboard(table) {
+function HTMLUsdDashboard(table)
+{
+  /*Acá esta implementación de la coma invertida para el código, se usa diferente.
+    Tenés que escribir todo el código HTML como viene directamente entre comas invertidas.
+    Y solo la parte que hacés uso de valores de variables, o que depende del código externo
+    se cambia por ${ valor }  ... sino, estás con el mismo estilo de código que antes, utilizando
+    la coma invertida de la misma manera que la comilla simple o comilla doble.
+    El objetivo de la coma invertida es no concatenar código, sino sustituir regiones del texto
+    por el resultado de la ejecución del código JS entre las llaves  ${ ..codigo.. }.
+
+    Ejemplo:
+
+   let html = `<table class="w3-border w3-round w3-container w3-display-topmiddle">
+                <tr>
+                  <td>
+                  <table class="w3-border w3-round w3-centered">
+                    <tr>
+                        <td colspan="2" class=" w3-round w3-dark-grey w3-medium">DOLAR ${table[0][0]}</td>
+                    </tr>
+                    <tr class="w3-light-grey">
+                      <td class=" w3-half w3-tiny">` + ${table[1][0]}<td>
+                    ....ETC....`;
+  */
   let html = "";
   html += `<table class=" w3-border w3-round w3-container w3-display-topmiddle">
    							<tr>
