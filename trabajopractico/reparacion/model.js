@@ -1,8 +1,8 @@
 /*
-	Example: UserCRUDApplication // CRUD-Development
+	Example: LoginModel Module // CRUD-Development
 	Autor: Matías Gastón Santiago
-	Versión: 7.0
-	Copyright (C) 2020 - Curso de Desarrollo de Sistemas
+	Versión: 1.0
+	Copyright (C) 2020 - Curso de Desarrollo de Sistemas 
 	https://educacion.batan.coop/course/view.php?id=9
 
 	This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,37 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import {Model} from './model.js';
-import {View} from './view.js';
+class LoginModel extends EventTarget
+{
+	constructor()
+	{
+		super();
+	};
 
-let model = new Model();
-let view = new View('application', model);
+	login(userData)
+	{
+		let message =
+		{
+			action:'login',
+			body: userData
+		};
+
+		return fetch( './loginModel.php', { method:'POST', body:JSON.stringify(message) } );
+	}
+
+	register(userData)
+	{
+		let message =
+		{
+			action:'register',
+			body: userData
+		};
+
+		return fetch( './loginModel.php', { method:'POST', body:JSON.stringify(message) } );
+	}
+
+	
+};
+
+
+export { LoginModel };

@@ -1,8 +1,8 @@
 /*
-	Example: UserCRUDApplication // CRUD-Development
+	Example: LoginViewController Module // CRUD-Development
 	Autor: Matías Gastón Santiago
-	Versión: 7.0
-	Copyright (C) 2020 - Curso de Desarrollo de Sistemas
+	Versión: 1.0
+	Copyright (C) 2020 - Curso de Desarrollo de Sistemas 
 	https://educacion.batan.coop/course/view.php?id=9
 
 	This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,32 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import {Model} from './model.js';
-import {View} from './view.js';
+import {LoginModel} from './model.js';
 
-let model = new Model();
-let view = new View('application', model);
+class LoginViewController
+{
+	constructor( model, view )
+	{
+		this.innerView = view;
+		this.innerModel = model;
+	}
+
+	onLoginButtonClick(event)
+	{
+		window.alert('Por implementar...');
+
+		//cortar la propagación del evento.
+		event.preventDefault();
+	}
+
+	onRegisterButtonClick(event)
+	{
+		window.alert('Por implementar...');
+
+		//cortar la propagación del evento.
+		event.preventDefault();
+	}
+
+}
+
+export { LoginViewController };

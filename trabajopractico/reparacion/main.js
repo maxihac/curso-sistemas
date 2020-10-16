@@ -2,7 +2,7 @@
 	Example: UserCRUDApplication // CRUD-Development
 	Autor: Matías Gastón Santiago
 	Versión: 7.0
-	Copyright (C) 2020 - Curso de Desarrollo de Sistemas
+	Copyright (C) 2020 - Curso de Desarrollo de Sistemas 
 	https://educacion.batan.coop/course/view.php?id=9
 
 	This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,15 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import {Model} from './model.js';
-import {View} from './view.js';
+import {LoginModel} from './model.js';
+import {LoginView} from './view.js';
 
-let model = new Model();
-let view = new View('application', model);
+let model = new LoginModel();
+let view = new LoginView('login', model);
+
+
+
+
+
+
+

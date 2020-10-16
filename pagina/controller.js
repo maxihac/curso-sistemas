@@ -31,15 +31,14 @@ class ViewController
 
 	onLoginButtonClick(event)
 	{
-		window.alert('Por implementar...');
-
+		window.alert('Por implementar...(Usuario Login!)');
 		//cortar la propagación del evento.
 		event.preventDefault();
 	}
 
 	onRegisterButtonClick(event)
 	{
-		window.alert('Por implementar...');
+		window.alert('Por implementar...(Usuario Register!)');
 
 		//cortar la propagación del evento.
 		event.preventDefault();
