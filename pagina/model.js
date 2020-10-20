@@ -24,30 +24,80 @@ class Model extends EventTarget
 	constructor()
 	{
 		super();
+		this.innerData = new Array();
 	};
 
-	login(userData)
+	create( userData )
 	{
-		let message =
-		{
-			action:'login',
-			body: userData
-		};
+		let success = false;
 
-		return fetch( './loginModel.php', { method:'POST', body:JSON.stringify(message) } );
+		if ( this.isValidUserData(userData) && !this.isUsernameAlreadyExists(userData.username) )
+		{
+			this.innerData.push( userData );
+			this.dispatchEvent( new CustomEvent("change") );
+		}
 	}
 
-	register(userData)
+	edit( username, newUserData )
 	{
-		let message =
+		let success = false;
+
+		let index = this.innerData.findIndex( user => user.username === username );
+
+		if ( index >= 0 && this.isValidUserData(newUserData) && !this.isUsernameAlreadyExists(userData.username) )
 		{
-			action:'register',
-			body: userData
-		};
+			Object.assign(this.innerData[index], newUserData);
+			this.dispatchEvent( new CustomEvent("change") );
+		}
+	};
 
-		return fetch( './loginModel.php', { method:'POST', body:JSON.stringify(message) } );
-	}
+	delete( username )
+	{
+		let index = this.innerData.findIndex( user => user.username === username );
 
+		if ( index >= 0 )
+		{
+			this.innerData.splice(index,1);
+			this.dispatchEvent( new CustomEvent("change") );
+		}
+	};
+
+	getByUsername( username )
+	{
+		if ( typeof(username) === "string" )
+		{
+			let index = this.innerData.findIndex( user => user.username === username );
+
+			return ( index >= 0 )? this.innerData[index] : null;
+		}
+		else
+		{
+			return null;
+		}
+	};
+
+	getAll()
+	{
+		return this.innerData;
+	};
+
+	isUsernameAlreadyExists( username )
+	{
+		return ( this.getByUsername( username ) == null )? false : true;
+	};
+
+	isValidUserData( userData )
+	{
+		let success = true;
+
+		let passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,16})");
+
+   success = ( success && userData.hasOwnProperty('username') && userData.username != null );
+	 success = ( success && userData.hasOwnProperty('name') && userData.name != null );
+	success = ( success && userData.hasOwnProperty('password') && userData.password.match(passwordRegex) );
+
+		return success;
+	};
 
 };
 

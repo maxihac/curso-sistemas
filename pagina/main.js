@@ -19,8 +19,7 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import {Model} from './model.js';
+import {RemoteModel} from './remotemodel.js';
 import {View} from './view.js';
-
-let model = new Model();
+let model = new RemoteModel();
 let view = new View('application', model);

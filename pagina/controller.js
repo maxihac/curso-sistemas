@@ -31,19 +31,62 @@ class ViewController
 
 	onLoginButtonClick(event)
 	{
-		window.alert('Por implementar...(Usuario Login!)');
+		let formViewData = new FormData( document.getElementById("loginForm") );
+		let formUserData = Object.fromEntries(formViewData);
+		 console.log(formUserData);
+		 this.innerModel.login(formUserData).then( response =>
+ 		{
+ 			this.accessKey = response.key;
+ 			window.alert( 'NextAccessKey:'+this.accessKey+' Response:'+ response.body );
+ 		});
+
+ 		//cortar la propagación del evento.
+ 		event.preventDefault();
+
+	/*	window.alert('Por implementar...(Usuario Login!)');
 		//cortar la propagación del evento.
-		event.preventDefault();
+		event.preventDefault();*/
 	}
 
 	onRegisterButtonClick(event)
 	{
-		window.alert('Por implementar...(Usuario Register!)');
+//abre el model de login con los datos a completar y cierra la ventana login
+	  document.getElementById('windowsregister').style.display='block';
+	  document.getElementById('windowslogin').style.display='none';
 
-		//cortar la propagación del evento.
-		event.preventDefault();
 	}
+	onNewUserCancelButtonClick()
+	{
+		//Ocultar el diálogo modal y vuelve  a mostrar el login como consecuencia de la cancelación del pedido.
+		document.getElementById('windowsregister').style.display='none';
+	document.getElementById('windowslogin').style.display='block';
+	}
+	onNewUserConfirmButtonClick()
+	{
+		//Traer los datos del form de la vista.
+		let formViewData = new FormData( document.getElementById("frmNewUserData") );
+		let formUserData = Object.fromEntries(formViewData);
+     console.log(formUserData);
+		//Validaciones tempranas (Cliente)
+		let success = true;
 
+		if ( !this.innerModel.isValidUserData( formUserData ) )
+		{
+			window.alert("ClientError: Los datos del usuario no cumplen con la especificación requerida.");
+			success = false;
+		}
+		//Superadas todas las validaciones tempranas del cliente, invocar el modelo (despacho)
+		if ( success )
+		{
+			//Modelo es asincrónico, al final de la cadena se chequea si hubo errores.
+			this.innerModel.create( formUserData )
+			.then( response => response.json() )
+			.then( response => {if ( response != null && response.hasOwnProperty('status') ) window.alert("ServerError: " + response.description )} )
+			.then( () => this.innerView.update() );
+		}
+		//Ocultar el modal
+		document.getElementById('windowsregister').style.display='none';
+		//this.innerView.hideNewUserModal();
+	}
 }
-
 export {ViewController };

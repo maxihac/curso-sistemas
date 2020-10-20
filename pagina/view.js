@@ -29,6 +29,18 @@ class View
 		this.innerModel = model;
 		this.innerController = new ViewController(model, this);
 		this.normal();
+
+				this.newUserDataDefaultsTest =
+				{
+					username:'juan123',
+					password:"Pa$$word1234",
+					name:'Juan',
+					surname:'García',
+					email:'email@email.com',
+					phone_number:'12345678',
+					country:'Argentina',
+					address: 'Av. Falsa 123'
+				};
 	}
 
 	clear()
@@ -75,11 +87,11 @@ class View
  				<a href="#subscribe" class="w3-bar-item w3-button w3-padding">Ingresar</a>
 
 		  </nav>`;
-	
+
 		document.getElementById("navbar").innerHTML = innerHTML;
 		return innerHTML;
 	}
-	
+
 	header()
 	{
 		let innerHTML =
@@ -216,8 +228,8 @@ class View
 		        <p> Y accede a nuestras ofertas y enterate de proximas novedades</p>
 		        <p><input class="w3-input w3-round w3-border" type="text" placeholder="Ingrese su E-mail" style="width:100%"></p>
 		        <p><input class="w3-input w3-round w3-border" type="password" placeholder="ingrese su contraseña" style="width:100%"></p>
-		        <button id="${this.id}btnLogin" class="w3-button w3-red w3-round w3-margin-bottom">Ingresa</button>
-		        <button id="${this.id}btnRegister" class="w3-button w3-red w3-round w3-margin-bottom">Registrate</button>
+		        <button id="bottomBtnLogin" class="w3-button w3-red w3-round w3-margin-bottom">Ingresa</button>
+		       <button id="bottomtBtnRegister" class="w3-button w3-red w3-round w3-margin-bottom">Registrate</button>
 		        </form>
 		      </div>`;
 
@@ -226,7 +238,7 @@ class View
 
 			cambiar id, según está especificado en el comentario.
 		  */
-	
+
 		document.getElementById("body").innerHTML = innerHTML;
 		return innerHTML;
 	}
@@ -281,7 +293,7 @@ class View
 				<div class="w3-center w3-padding-24">Powered by <a href="xxx" title="xxx" target="_blank" class="w3-hover-opacity">Max Hac Mar del Plata 2020</a></div>
 				<!-- End page content -->
 				</div>`;
-	
+
 		document.getElementById("footer").innerHTML = innerHTML;
 		return innerHTML;
 	}
@@ -310,32 +322,43 @@ class View
 	{
 		console.log("login!");
 
-		let innerHTML =	
+		let innerHTML =
 		`<!-- LOGINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
-		<div class="w3-quarter w3-hide-small w3-round w3-blue-grey w3-opacity-min w3-display-topright w3-animate-zoom" style="margin-right:6%">
-			
+		<div id="windowslogin" class="w3-quarter w3-hide-small w3-round w3-blue-grey w3-opacity-min w3-display-topright w3-animate-zoom" style="margin-right:6%">
+
 			<a id="logincloseButton"  class=" fa fa-remove w3-right w3-button w3-transparent w3-large"></a>
-			
+
 			<div w3-container class="w3-center">
 				<br>
 				<h6>Ingresa a tu espacio y aprovecha exclusivos descuentos</h6>
 				<img src="./resources/baglogin.jpg" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 			</div>
 
-			<form id="${this.id}loginForm" class="w3-container">
+			<form id="loginForm" class="w3-container">
 				<div class="w3-section">
 					<h6>Ingrese su E-mail</h6>
 					<input class="w3-input w3-round w3-padding-small w3-border w3-margin-bottom" type="email" placeholder="E-mail" name="usrname" required>
 					<h6>Ingrese su contraseña</h6>
 					<input class="w3-input w3-round w3-padding-small w3-border" type="Password" placeholder="Password" name="psw" required>
 					<button id="frontBtnLogin" class="w3-button w3-round w3-block w3-grey w3-section">Ingresa</button>
-					<button id="frontBtnRegister" class="w3-button w3-round w3-padding-small w3-block w3-grey w3-section">Registrate</button>
+					<button id="frontBtnRegister" class="w3-button w3-round  w3-block w3-grey w3-section">Registrate</button>
 					<p>
 						<i id="logincloseButton2" class="w3-button w3-transparent">No me interesa</i>
 					</p>
 				</div>
 			</form>
-		</div>`;
+		</div>
+					<!-- REGISTER MODAL -->
+					<div id="windowsregister" class="w3-modal">
+						<div class="w3-modal-content">
+							<div class="w3-container">
+								<span id="btnNewUserCancel" class="w3-button w3-display-topright">&times;</span>
+								${createNewUserDataForm()}
+								<button id="btnNewUserConfirm">Confirmar</button>
+							</div>
+						</div>
+					</div>
+`;
 
 		document.getElementById("login").innerHTML = innerHTML;
 
@@ -351,24 +374,84 @@ class View
 		Una solución rápida es poner un ID único a mano que no se superponga con otro ya establecido.
 		O lo cambiamos en login() o lo cambiamos en body(), o en ambas.
 
-		Ejemplo, cambiamos ${this.id}btnLogin <-- que esto daría applicationbtnLogin  
+		Ejemplo, cambiamos ${this.id}btnLogin <-- que esto daría applicationbtnLogin
 		por:
 
 		en login()
 		id="frontBtnLogin"
-		
+
 		en body()
 		id="bottomBtnLogin"
 
 		y lo mismo para el botón de registro...
-		 
+
 		*/
+		function createNewUserDataForm ()
+		{
 
+			let innerHTML =
+			`<form id="frmNewUserData" >
+				<table>
+					<tr>
+						<td>
+							<label>Nombre de Usuario:</label>
+							<input type="text" name="username" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Contraseña:</label>
+							<input type="password" name="password" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Nombre:</label>
+							<input type="text" name="name" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Apellido:</label>
+							<input type="text" name="surname" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Email:</label>
+							<input type="email" name="email" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Teléfono/Celular:</label>
+							<input type="text" name="phone_number" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>País:</label>
+							<input type="text" name="country" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Dirección:</label>
+							<input type="text" name="address" value=""></input>
+						</td>
+					</tr>
+				</table>
+			</form>`;
+			return innerHTML;
+		}
 		document.getElementById('frontBtnLogin').addEventListener('click', event => this.innerController.onLoginButtonClick(event));
-		document.getElementById('frontBtnRegister').addEventListener('click', event => this.innerController.onRegisterButtonClick(event));
-		document.getElementById("logincloseButton").addEventListener('click', event => this.hidelogin() );
-		document.getElementById("logincloseButton2").addEventListener('click', event => this.hidelogin() );
-
+    document.getElementById('bottomBtnLogin').addEventListener('click', event => this.innerController.onLoginButtonClick(event));
+	  document.getElementById('frontBtnRegister').addEventListener('click', event => this.innerController.onRegisterButtonClick(event));
+		document.getElementById('bottomtBtnRegister').addEventListener('click', event => this.innerController.onRegisterButtonClick(event));
+		document.getElementById('btnNewUserCancel').addEventListener('click', event => this.innerController.onNewUserCancelButtonClick(event)); //boton de cierre del modal, se arrepiente
+	  document.getElementById('btnNewUserConfirm').addEventListener('click', event => this.innerController.onNewUserConfirmButtonClick(event)); //boton del modal confirma el registro
+		document.getElementById("logincloseButton").addEventListener('click', event => this.hidelogin() ); //boton de cierre de la ventana login
+		document.getElementById("logincloseButton2").addEventListener('click', event => this.hidelogin() ); //boton de cierre de la ventana login
 		return innerHTML;
 	}
 
