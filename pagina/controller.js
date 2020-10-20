@@ -34,18 +34,27 @@ class ViewController
 		let formViewData = new FormData( document.getElementById("loginForm") );
 		let formUserData = Object.fromEntries(formViewData);
 		 console.log(formUserData);
-		 this.innerModel.login(formUserData).then( response =>
+		 let success = true;
+
+ 		if ( !this.innerModel.isValidUserData2( formUserData ) )
  		{
- 			this.accessKey = response.key;
- 			window.alert( 'NextAccessKey:'+this.accessKey+' Response:'+ response.body );
- 		});
+ 			window.alert("ClientError: Los datos del usuario no cumplen con la especificación requerida.");
+ 			success = false;
+ 		}
+ 		//Superadas todas las validaciones tempranas del cliente, invocar el modelo (despacho)
+ 		if ( success )
+ 		{
+ 			//Modelo es asincrónico, al final de la cadena se chequea si hubo errores.
+ 			this.innerModel.login( formUserData )
+ 			.then( response => response.json() )
+ 			.then( response => {if ( response != null && response.hasOwnProperty('status') ) window.alert("ServerError: " + response.description )} )
+ 			.then( () => this.innerView.update() );
+ 		}
+
 
  		//cortar la propagación del evento.
  		event.preventDefault();
 
-	/*	window.alert('Por implementar...(Usuario Login!)');
-		//cortar la propagación del evento.
-		event.preventDefault();*/
 	}
 
 	onRegisterButtonClick(event)

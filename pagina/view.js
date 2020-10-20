@@ -337,9 +337,9 @@ class View
 			<form id="loginForm" class="w3-container">
 				<div class="w3-section">
 					<h6>Ingrese su E-mail</h6>
-					<input class="w3-input w3-round w3-padding-small w3-border w3-margin-bottom" type="email" placeholder="E-mail" name="usrname" required>
+					<input class="w3-input w3-round w3-padding-small w3-border w3-margin-bottom" type="text" placeholder="E-mail" name="username" required>
 					<h6>Ingrese su contraseña</h6>
-					<input class="w3-input w3-round w3-padding-small w3-border" type="Password" placeholder="Password" name="psw" required>
+					<input class="w3-input w3-round w3-padding-small w3-border" type="Password" placeholder="Password" name="password" required>
 					<button id="frontBtnLogin" class="w3-button w3-round w3-block w3-grey w3-section">Ingresa</button>
 					<button id="frontBtnRegister" class="w3-button w3-round  w3-block w3-grey w3-section">Registrate</button>
 					<p>
@@ -350,7 +350,7 @@ class View
 		</div>
 					<!-- REGISTER MODAL -->
 					<div id="windowsregister" class="w3-modal">
-						<div class="w3-modal-content">
+						<div class="w3-modal-content w3-blue-grey">
 							<div class="w3-container">
 								<span id="btnNewUserCancel" class="w3-button w3-display-topright">&times;</span>
 								${createNewUserDataForm()}
@@ -362,35 +362,11 @@ class View
 
 		document.getElementById("login").innerHTML = innerHTML;
 
-		/*Acá está el problema, este botón de "Ingresa" tiene el mismo ID que el botón del que está siendo generado
-		por la función de body(), con lo cual, la asociación al controlador es ambigua. Los ID's deben ser únicos.
-
-		login():
-		<button id="${this.id}btnLogin" class="w3-button w3-round w3-block w3-grey w3-section">Ingresa</button>
-
-		body():
-		<button id="${this.id}btnLogin" class="w3-button w3-red w3-round w3-margin-bottom">Ingresa</button>
-
-		Una solución rápida es poner un ID único a mano que no se superponga con otro ya establecido.
-		O lo cambiamos en login() o lo cambiamos en body(), o en ambas.
-
-		Ejemplo, cambiamos ${this.id}btnLogin <-- que esto daría applicationbtnLogin
-		por:
-
-		en login()
-		id="frontBtnLogin"
-
-		en body()
-		id="bottomBtnLogin"
-
-		y lo mismo para el botón de registro...
-
-		*/
 		function createNewUserDataForm ()
 		{
 
 			let innerHTML =
-			`<form id="frmNewUserData" >
+			`<form id="frmNewUserData" class="w3-container w3-round w3-blue-grey" >
 				<table>
 					<tr>
 						<td>

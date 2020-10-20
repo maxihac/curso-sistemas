@@ -98,7 +98,18 @@ class Model extends EventTarget
 
 		return success;
 	};
+	isValidUserData2( userData )
+	{
+		let success = true;
 
+		let passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,16})");
+
+   success = ( success && userData.hasOwnProperty('username') && userData.username != null );
+	
+	success = ( success && userData.hasOwnProperty('password') && userData.password.match(passwordRegex) );
+
+		return success;
+	};
 };
 
 
