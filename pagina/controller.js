@@ -70,6 +70,7 @@ class ViewController
 		document.getElementById('windowsregister').style.display='none';
 	document.getElementById('windowslogin').style.display='block';
 	}
+	
 	onNewUserConfirmButtonClick()
 	{
 		//Traer los datos del form de la vista.
@@ -91,7 +92,10 @@ class ViewController
 			this.innerModel.create( formUserData )
 			.then( response => response.json() )
 			.then( response => {if ( response != null && response.hasOwnProperty('status') ) window.alert("ServerError: " + response.description )} )
-			.then( () => this.innerView.update() );
+			.then( () =>
+			{
+				alert('Usuario Registrado!');
+			} );
 		}
 		//Ocultar el modal
 		document.getElementById('windowsregister').style.display='none';

@@ -1,7 +1,7 @@
 <?php
 
 	//Conexión al motor de Bases de Datos
-	$connection = new PDO('mysql:host=127.0.0.1:3306;dbname=abm', 'root', '' );
+	$connection = new PDO('mysql:host=127.0.0.1:3306;dbname=abm', 'root', '987654' );
 
 	//Determinamos que en caso de errores (desde la base de datos), se reflejen como excepciones.
 	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -9,7 +9,7 @@
 	//Ejecutando la conexión en un bloque protegido. En caso de falla X al conectar, se atrapa la excepción
 	try
 	{
-		$connection = new PDO('mysql:host=127.0.0.1:3306;dbname=abm', 'root', '' );
+		$connection = new PDO('mysql:host=127.0.0.1:3306;dbname=abm', 'root', '987654' );
 	}
 	catch (PDOException $connectionException)
 	{
